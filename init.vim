@@ -16,6 +16,7 @@ if dein#load_state(expand('~/.config/nvim/dein'))
   call dein#add('vim-airline/vim-airline')
   call dein#add('airblade/vim-gitgutter')
   call dein#add('scrooloose/nerdtree')
+  call dein#add('google/yapf')
 
   " Elixir
   call dein#add('elixir-lang/vim-elixir')
@@ -72,6 +73,10 @@ set background=dark
 
 " Filetypes
 autocmd FileType vim setl sw=2 sts=2 ts=2
+
+" Code formatting for python
+autocmd FileType python nnoremap <Leader>= :0,$!yapf<CR>
+
 filetype plugin indent on
 
 " Shortcuts
