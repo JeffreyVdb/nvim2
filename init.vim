@@ -11,6 +11,7 @@ if dein#load_state(expand('~/.config/nvim/dein'))
   call dein#add('morhetz/gruvbox')
   call dein#add('vim-airline/vim-airline')
   call dein#add('airblade/vim-gitgutter')
+  call dein#add('scrooloose/nerdtree')
 
   call dein#end()
   call dein#save_state()
@@ -20,10 +21,15 @@ endif
 syntax enable
 set nu
 set cursorline
+
+" Tab - Space indent behavior
+set shiftround
 set shiftwidth=4
 set softtabstop=4
 set tabstop=4
 set expandtab
+
+" Visual stuff
 set colorcolumn=80,100,120
 set listchars=eol:$,tab:>·,trail:~,extends:>,precedes:<,space:.
 set list
@@ -49,4 +55,21 @@ let mapleader="\<SPACE>"
 inoremap jj <esc>
 noremap j gj
 noremap k gk
+
+" repeat selection after indent
+vnoremap > ><CR>gv
+vnoremap < <<CR>gv
+
+" keep more context when scrolling off the end of a buffer
+set scrolloff=10
+
+" move search result to middle of the screen
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap * *zz
+
+"
+" plugin settings
+"
+au vimenter * if !argc() | NERDTree | endif
 
