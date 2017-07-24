@@ -16,10 +16,16 @@ if dein#load_state(expand('~/.config/nvim/dein'))
   call dein#add('vim-airline/vim-airline')
   call dein#add('airblade/vim-gitgutter')
   call dein#add('scrooloose/nerdtree')
+
+  " Elixir
+  call dein#add('elixir-lang/vim-elixir')
+  call dein#add('slashmili/alchemist.vim')
+
+  " Go
   call dein#add('fatih/vim-go')
+  call dein#add('zchee/deoplete-go', {'build': 'make'})
   call dein#add('Shougo/deoplete.nvim')
   call dein#add('Shougo/neco-vim')
-  call dein#add('zchee/deoplete-go', {'build': 'make'})
 
   call dein#end()
   call dein#save_state()
