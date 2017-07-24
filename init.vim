@@ -3,6 +3,10 @@ if &compatible
   set nocompatible  " Be iMproved
 endif
 
+let g:python_host_prog = expand('~/.pyenv/versions/neovim2/bin/python')
+let g:python3_host_prog = expand('~/.pyenv/versions/neovim3/bin/python')
+let g:python3_host_skip_check = 1
+
 set runtimepath+=~/.config/nvim/dein/repos/github.com/Shougo/dein.vim
 if dein#load_state(expand('~/.config/nvim/dein'))
   call dein#begin(expand('~/.config/nvim/dein'))
@@ -12,6 +16,10 @@ if dein#load_state(expand('~/.config/nvim/dein'))
   call dein#add('vim-airline/vim-airline')
   call dein#add('airblade/vim-gitgutter')
   call dein#add('scrooloose/nerdtree')
+  call dein#add('fatih/vim-go')
+  call dein#add('Shougo/deoplete.nvim')
+  call dein#add('Shougo/neco-vim')
+  call dein#add('zchee/deoplete-go', {'build': 'make'})
 
   call dein#end()
   call dein#save_state()
@@ -78,6 +86,13 @@ nnoremap * *zz
 
 "
 " plugin settings
+"
+let g:deoplete#enable_at_startup = 1
+
+" Deoplete settings for go
+let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+let g:deoplete#sources#go#use_cache = 0
 "
 au vimenter * if !argc() | NERDTree | endif
 
