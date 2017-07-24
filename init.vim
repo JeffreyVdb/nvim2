@@ -21,6 +21,14 @@ endif
 syntax enable
 set nu
 set cursorline
+set ignorecase
+set smartcase
+set wildmode=longest,list,full
+
+" fold control
+set foldmethod=indent
+set foldnestmax=1
+set foldlevel=0
 
 " Tab - Space indent behavior
 set shiftround
