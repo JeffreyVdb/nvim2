@@ -17,6 +17,7 @@ if dein#load_state(expand('~/.config/nvim/dein'))
   call dein#add('airblade/vim-gitgutter')
   call dein#add('scrooloose/nerdtree')
   call dein#add('google/yapf')
+  call dein#add('w0rp/ale')
 
   " Elixir
   call dein#add('elixir-lang/vim-elixir')
@@ -58,7 +59,6 @@ set expandtab
 set colorcolumn=80,100,120
 set listchars=eol:$,tab:>·,trail:~,extends:>,precedes:<,space:.
 set list
-let g:airline_powerline_fonts = 1
 let g:is_bash = 1
 
 " Strip trailing whitespace for these filetypes
@@ -69,6 +69,8 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 " Theme
 colorscheme gruvbox
+let g:gruvbox_contrast_light = 'hard'
+let g:gruvbox_contrast_dark = 'hard'
 set background=dark
 
 " Filetypes
@@ -112,6 +114,23 @@ let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 let g:deoplete#sources#go#use_cache = 0
+
 "
+" Airline settings
+"
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#ale#enabled = 1
+
+"
+" Ale settings
+"
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_sign_error = '>>'
+let g:ale_sign_warning = '--'
+let g:ale_linters = {
+\  'python': ['isort', 'flake8']
+\}
+
+" Start NERDTree when vim is opened without arguments
 au vimenter * if !argc() | NERDTree | endif
 
