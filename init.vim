@@ -37,12 +37,14 @@ set nu
 set cursorline
 set ignorecase
 set smartcase
+set relativenumber
 set wildmode=longest,list,full
 
 " fold control
 set foldmethod=indent
 set foldnestmax=1
 set foldlevel=0
+nnoremap <space> za
 
 " Tab - Space indent behavior
 set shiftround
@@ -73,7 +75,7 @@ autocmd FileType vim setl sw=2 sts=2 ts=2
 filetype plugin indent on
 
 " Shortcuts
-let mapleader="\<SPACE>"
+let mapleader=","
 inoremap jj <esc>
 noremap j gj
 noremap k gk
@@ -89,6 +91,12 @@ set scrolloff=10
 nnoremap n nzz
 nnoremap N Nzz
 nnoremap * *zz
+
+" Disable arrow keys (this is for noobs)
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
 
 "
 " plugin settings
