@@ -12,6 +12,7 @@ if dein#load_state(expand('~/.config/nvim/dein'))
   call dein#begin(expand('~/.config/nvim/dein'))
 
   call dein#add('Shougo/dein.vim')
+  call dein#add('w0rp/ale')
   call dein#add('morhetz/gruvbox')
   call dein#add('vim-airline/vim-airline')
   call dein#add('airblade/vim-gitgutter')
@@ -34,6 +35,7 @@ endif
 
 " General settings
 syntax enable
+set autoread
 set nu
 set cursorline
 set ignorecase
@@ -112,6 +114,22 @@ let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 let g:deoplete#sources#go#use_cache = 0
+
 "
+" Ale settings
+"
+let g:ale_python_isort_executable = '/usr/bin/isort'
+let g:ale_python_isort_use_global = 1
+
+let g:ale_sign_error = '>>'
+let g:ale_sign_warning = '--'
+let g:airline#extensions#ale#enabled = 1
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 1
+let g:ale_linters = {
+\  'python': ['flake8', 'isort', 'pylint'],
+\}
+
+" When entering vim with no arguments, start NERDTree
 au vimenter * if !argc() | NERDTree | endif
 
