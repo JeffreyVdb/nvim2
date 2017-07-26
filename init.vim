@@ -70,6 +70,7 @@ let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 " Theme
+let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
 set background=dark
 
@@ -83,6 +84,7 @@ filetype plugin indent on
 
 " Shortcuts
 let mapleader=","
+nnoremap <Leader>w :w<CR>
 inoremap jj <esc>
 noremap j gj
 noremap k gk
