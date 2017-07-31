@@ -84,6 +84,7 @@ filetype plugin indent on
 
 " Shortcuts
 let mapleader=","
+vnoremap <Leader>y "+y<CR>
 nnoremap <Leader>w :w<CR>
 inoremap jj <esc>
 noremap j gj
