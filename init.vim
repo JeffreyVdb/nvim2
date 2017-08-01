@@ -64,7 +64,7 @@ let g:airline_powerline_fonts = 1
 let g:is_bash = 1
 
 " Strip trailing whitespace for these filetypes
-autocmd FileType c,cpp,java,php,sh,python,vim autocmd BufWritePre <buffer> %s/\s\+$//e
+autocmd FileType ex,exs,c,cpp,java,php,sh,python,vim autocmd BufWritePre <buffer> %s/\s\+$//e
 
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -131,6 +131,7 @@ let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 1
 let g:ale_linters = {
 \  'python': ['flake8', 'isort', 'pylint'],
+\  'elixir': ['credo', 'dogma']
 \}
 
 " When entering vim with no arguments, start NERDTree
