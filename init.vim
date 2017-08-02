@@ -64,15 +64,16 @@ let g:airline_powerline_fonts = 1
 let g:is_bash = 1
 
 " Strip trailing whitespace for these filetypes
-autocmd FileType elixir,c,cpp,java,php,sh,python,vim autocmd BufWritePre <buffer> %s/\s\+$//e
+autocmd FileType elixir,c,cpp,java,php,sh,zsh,python,vim autocmd BufWritePre <buffer> %s/\s\+$//e
 
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 " Theme
-let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_contrast_light = 'hard'
 colorscheme gruvbox
-set background=dark
+set background=light
 
 " Filetypes
 autocmd FileType vim,yaml setl sw=2 sts=2 ts=2
