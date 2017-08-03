@@ -11,6 +11,7 @@ set runtimepath+=~/.config/nvim/dein/repos/github.com/Shougo/dein.vim
 if dein#load_state(expand('~/.config/nvim/dein'))
   call dein#begin(expand('~/.config/nvim/dein'))
 
+  call dein#add('ekalinin/Dockerfile.vim')
   call dein#add('Shougo/dein.vim')
   call dein#add('w0rp/ale')
   call dein#add('morhetz/gruvbox')
@@ -83,10 +84,11 @@ autocmd FileType python nnoremap <Leader>= :0,$!yapf<CR>
 
 filetype plugin indent on
 
-" Shortcuts
+" Shortcuts / Keybinds
 let mapleader=","
 vnoremap <Leader>y "+y<CR>
 nnoremap <Leader>w :w<CR>
+nnoremap <Leader>Q :wqa<CR>
 inoremap jj <esc>
 noremap j gj
 noremap k gk
