@@ -19,6 +19,7 @@ if dein#load_state(expand('~/.config/nvim/dein'))
   call dein#add('airblade/vim-gitgutter')
   call dein#add('scrooloose/nerdtree')
   call dein#add('google/yapf')
+  call dein#add('tpope/vim-fugitive')
 
   " Elixir
   call dein#add('elixir-lang/vim-elixir')
