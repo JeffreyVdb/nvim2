@@ -8,6 +8,7 @@ let g:python3_host_prog = expand('~/.pyenv/versions/neovim3/bin/python')
 let g:python3_host_skip_check = 1
 
 set runtimepath+=~/.config/nvim/dein/repos/github.com/Shougo/dein.vim
+
 if dein#load_state(expand('~/.config/nvim/dein'))
   call dein#begin(expand('~/.config/nvim/dein'))
 
@@ -21,6 +22,8 @@ if dein#load_state(expand('~/.config/nvim/dein'))
   call dein#add('scrooloose/nerdtree')
   call dein#add('google/yapf')
   call dein#add('tpope/vim-fugitive')
+  call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
+  call dein#add('junegunn/fzf.vim')
 
   " Elixir
   call dein#add('elixir-lang/vim-elixir')
@@ -28,7 +31,7 @@ if dein#load_state(expand('~/.config/nvim/dein'))
 
   " Go
   call dein#add('fatih/vim-go')
-  call dein#add('zchee/deoplete-go', {'build': 'make'})
+  call dein#add('zchee/deoplete-go', { 'build': 'make' })
   call dein#add('Shougo/deoplete.nvim')
   call dein#add('Shougo/neco-vim')
 
@@ -100,6 +103,8 @@ let mapleader=","
 vnoremap <Leader>y "+y<CR>
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>Q :wqa<CR>
+nnoremap <Leader>o <C-o>
+nnoremap <Leader>i <C-i>
 inoremap jj <esc>
 noremap j gj
 noremap k gk
@@ -131,6 +136,32 @@ let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 let g:deoplete#sources#go#use_cache = 0
+
+"
+" FZF settings
+"
+
+" Customize fzf colors to match your color scheme
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+let g:fzf_layout = { 'down': '~40%' }
+let g:fzf_buffers_jump = 1
+
+
+map <C-p> :Files<CR>
+map <Leader>g :Buffers<CR>
 
 "
 " Ale settings
