@@ -12,6 +12,7 @@ if dein#load_state(expand('~/.config/nvim/dein'))
   call dein#begin(expand('~/.config/nvim/dein'))
 
   call dein#add('ekalinin/Dockerfile.vim')
+  call dein#add('tpope/vim-eunuch')
   call dein#add('Shougo/dein.vim')
   call dein#add('w0rp/ale')
   call dein#add('morhetz/gruvbox')
