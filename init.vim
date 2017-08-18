@@ -40,6 +40,7 @@ if dein#load_state(expand('~/.config/nvim/dein'))
 endif
 
 " General settings
+set mouse=a
 syntax enable
 set autoread
 set nu
@@ -49,6 +50,15 @@ set smartcase
 set relativenumber
 set wildmode=longest,list,full
 set mouse=a
+set clipboard+=unnamedplus
+
+" Splits
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+set splitbelow
+set splitright
 
 " fold control
 set foldmethod=indent
