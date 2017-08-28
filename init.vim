@@ -101,7 +101,7 @@ colorscheme gruvbox
 set background=dark
 
 " Filetypes
-autocmd FileType vim,yaml setl sw=2 sts=2 ts=2
+autocmd FileType vim,yaml,elixir setl sw=2 sts=2 ts=2
 
 " Code formatting for python
 autocmd FileType python nnoremap <Leader>= :0,$!yapf<CR>
