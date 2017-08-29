@@ -20,10 +20,14 @@ if dein#load_state(expand('~/.config/nvim/dein'))
   call dein#add('vim-airline/vim-airline')
   call dein#add('airblade/vim-gitgutter')
   call dein#add('scrooloose/nerdtree')
+  call dein#add('Xuyuanp/nerdtree-git-plugin')
   call dein#add('google/yapf')
   call dein#add('tpope/vim-fugitive')
   call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
   call dein#add('junegunn/fzf.vim')
+  call dein#add('godlygeek/tabular')
+  call dein#add('plasticboy/vim-markdown')
+  call dein#add('diepm/vim-rest-console')
 
   " Elixir
   call dein#add('elixir-lang/vim-elixir')
@@ -50,7 +54,6 @@ set smartcase
 set relativenumber
 set wildmode=longest,list,full
 set mouse=a
-set clipboard+=unnamedplus
 
 " Splits
 nnoremap <C-J> <C-W><C-J>
@@ -110,6 +113,7 @@ filetype plugin indent on
 
 " Shortcuts / Keybinds
 let mapleader=","
+nnoremap <Leader>cef :%y+<CR>
 vnoremap <Leader>y "+y<CR>
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>Q :wqa<CR>
@@ -189,6 +193,22 @@ let g:ale_linters = {
 \  'elixir': ['credo', 'dogma']
 \}
 
+"
+" NERDTree
+"
+
 " When entering vim with no arguments, start NERDTree
 au vimenter * if !argc() | NERDTree | endif
 
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
