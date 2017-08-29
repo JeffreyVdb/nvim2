@@ -101,7 +101,7 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_contrast_light = 'hard'
 colorscheme gruvbox
-set background=dark
+set background=light
 
 " Filetypes
 autocmd FileType vim,yaml,elixir setl sw=2 sts=2 ts=2
