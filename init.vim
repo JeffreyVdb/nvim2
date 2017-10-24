@@ -88,7 +88,7 @@ set expandtab
 set colorcolumn=80,100,120
 set listchars=eol:$,tab:>·,trail:~,extends:>,precedes:<,space:.
 set list
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 let g:is_bash = 1
 
 " Strip trailing whitespace for these filetypes
