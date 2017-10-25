@@ -29,6 +29,9 @@ if dein#load_state(expand('~/.config/nvim/dein'))
   call dein#add('plasticboy/vim-markdown')
   call dein#add('diepm/vim-rest-console')
 
+  " Python
+  call dein#add('vim-python/python-syntax')
+
   " Elixir
   call dein#add('elixir-lang/vim-elixir')
   call dein#add('slashmili/alchemist.vim')
@@ -108,6 +111,7 @@ autocmd FileType vim,yaml,elixir setl sw=2 sts=2 ts=2
 
 " Code formatting for python
 autocmd FileType python nnoremap <Leader>= :0,$!yapf<CR>
+let g:python_highlight_all = 1
 
 filetype plugin indent on
 
