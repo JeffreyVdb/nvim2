@@ -118,7 +118,7 @@ filetype plugin indent on
 " Shortcuts / Keybinds
 let mapleader=","
 nnoremap <Leader>cef :%y+<CR>
-vnoremap <Leader>y "+y<CR>
+vnoremap <Leader>Y "+y<CR>
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>Q :wqa<CR>
 nnoremap <Leader>o <C-o>
