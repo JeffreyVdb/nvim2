@@ -28,6 +28,7 @@ if dein#load_state(expand('~/.config/nvim/dein'))
   call dein#add('godlygeek/tabular')
   call dein#add('plasticboy/vim-markdown')
   call dein#add('diepm/vim-rest-console')
+  call dein#add('editorconfig/editorconfig-vim')
 
   " Python
   call dein#add('vim-python/python-syntax')
@@ -54,7 +55,6 @@ set nu
 set cursorline
 set ignorecase
 set smartcase
-set relativenumber
 set wildmode=longest,list,full
 set mouse=a
 
@@ -89,7 +89,7 @@ set expandtab
 
 " Visual stuff
 set colorcolumn=80,100,120
-set listchars=eol:$,tab:>·,trail:~,extends:>,precedes:<,space:.
+set listchars=eol:$,trail:~,extends:>,tab:>\ ,precedes:<
 set list
 let g:airline_powerline_fonts = 0
 let g:is_bash = 1
@@ -104,7 +104,7 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_contrast_light = 'hard'
 colorscheme gruvbox
-set background=light
+set background=dark
 
 " Filetypes
 autocmd FileType vim,yaml,elixir setl sw=2 sts=2 ts=2
@@ -187,15 +187,21 @@ map <Leader>g :Buffers<CR>
 let g:ale_python_isort_executable = '/usr/bin/isort'
 let g:ale_python_isort_use_global = 1
 
-let g:ale_sign_error = '>>'
-let g:ale_sign_warning = '--'
+let g:ale_sign_column_always = 1
+let g:ale_sign_error = 'x'
+let g:ale_sign_warning = '!'
 let g:airline#extensions#ale#enabled = 1
 let g:ale_lint_on_text_changed = 'never'
+let g:ale_open_list = 'on_save'
 let g:ale_lint_on_enter = 1
+let g:ale_pattern_options = {'^fugitive:[\\/][\\/]': {'ale_enabled': 0}}
 let g:ale_linters = {
 \  'python': ['flake8', 'isort', 'pylint'],
 \  'elixir': ['credo', 'dogma']
 \}
+
+nmap <silent> ]e <Plug>(ale_previous_wrap)
+nmap <silent> [e <Plug>(ale_previous_wrap)
 
 "
 " NERDTree
