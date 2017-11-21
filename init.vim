@@ -29,6 +29,8 @@ if dein#load_state(expand('~/.config/nvim/dein'))
   call dein#add('plasticboy/vim-markdown')
   call dein#add('diepm/vim-rest-console')
   call dein#add('editorconfig/editorconfig-vim')
+  call dein#add('pearofducks/ansible-vim')
+  call dein#add('rust-lang/rust.vim')
 
   " Python
   call dein#add('vim-python/python-syntax')
@@ -150,6 +152,20 @@ map <right> <nop>
 "
 let g:deoplete#enable_at_startup = 1
 
+" Go settings
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_types = 1
+
+let g:go_auto_sameids = 1
+let g:go_auto_type_info = 1
+let g:go_fmt_command = "goimports"
+
 " Deoplete settings for go
 let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
@@ -197,7 +213,8 @@ let g:ale_lint_on_enter = 1
 let g:ale_pattern_options = {'^fugitive:[\\/][\\/]': {'ale_enabled': 0}}
 let g:ale_linters = {
 \  'python': ['flake8', 'isort', 'pylint'],
-\  'elixir': ['credo', 'dogma']
+\  'elixir': ['credo', 'dogma'],
+\  'go': ['go build', 'gofmt', 'golint', 'go vet']
 \}
 
 nmap <silent> ]e <Plug>(ale_previous_wrap)
