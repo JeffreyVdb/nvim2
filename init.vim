@@ -29,6 +29,7 @@ if dein#load_state(expand('~/.config/nvim/dein'))
   call dein#add('plasticboy/vim-markdown')
   call dein#add('diepm/vim-rest-console')
   call dein#add('editorconfig/editorconfig-vim')
+  call dein#add('rust-lang/rust.vim')
 
   " Python
   call dein#add('vim-python/python-syntax')
@@ -188,8 +189,8 @@ let g:ale_python_isort_executable = '/usr/bin/isort'
 let g:ale_python_isort_use_global = 1
 
 let g:ale_sign_column_always = 1
-let g:ale_sign_error = 'x'
-let g:ale_sign_warning = '!'
+let g:ale_sign_error = 'X'
+let g:ale_sign_warning = '!!'
 let g:airline#extensions#ale#enabled = 1
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_open_list = 'on_save'
@@ -200,10 +201,12 @@ let g:ale_linters = {
 \  'elixir': ['credo', 'dogma']
 \}
 
+" Annoying ALEExeption when viewing a diff with vim-fugitive
+let g:ale_pattern_options = {'^fugitive:[\\/][\\/]': {'ale_enabled': 0}}
+"
 nmap <silent> ]e <Plug>(ale_previous_wrap)
 nmap <silent> [e <Plug>(ale_previous_wrap)
 
-"
 " NERDTree
 "
 
