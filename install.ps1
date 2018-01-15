@@ -12,6 +12,10 @@ function Install-EditorConfig () {
     make
     sudo make install
     Pop-Location
+
+    # Create library ldconfig
+    echo "/usr/local/lib64/" | sudo tee /etc/ld.so.conf.d/editorconfig.conf
+    sudo ldconfig
 }
 
 # Install dein
