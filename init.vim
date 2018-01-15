@@ -58,6 +58,7 @@ set ignorecase
 set smartcase
 set wildmode=longest,list,full
 set mouse=a
+set guicursor=
 
 " Splits
 nnoremap <C-J> <C-W><C-J>
